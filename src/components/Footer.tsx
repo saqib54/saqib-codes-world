@@ -32,17 +32,32 @@ const Footer = () => {
               Web & App Developer passionate about creating innovative digital solutions. 
               Turning ideas into reality through clean code and beautiful design.
             </p>
-            <div className="flex gap-3">
-              <Button size="icon" variant="ghost" className="hover:text-primary hover:bg-primary/10">
-                <Github className="h-5 w-5" />
-              </Button>
-              <Button size="icon" variant="ghost" className="hover:text-primary hover:bg-primary/10">
-                <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button size="icon" variant="ghost" className="hover:text-primary hover:bg-primary/10">
-                <Mail className="h-5 w-5" />
-              </Button>
-            </div>
+             <div className="flex gap-3">
+               <Button 
+                 size="icon" 
+                 variant="ghost" 
+                 className="hover:text-primary hover:bg-primary/10"
+                 onClick={() => window.open('https://github.com/saqib54', '_blank')}
+               >
+                 <Github className="h-5 w-5" />
+               </Button>
+               <Button 
+                 size="icon" 
+                 variant="ghost" 
+                 className="hover:text-primary hover:bg-primary/10"
+                 onClick={() => window.open('https://www.linkedin.com/in/saqib-azair-22301b33b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', '_blank')}
+               >
+                 <Linkedin className="h-5 w-5" />
+               </Button>
+               <Button 
+                 size="icon" 
+                 variant="ghost" 
+                 className="hover:text-primary hover:bg-primary/10"
+                 onClick={() => window.open('mailto:officalyt.pk@gmail.com', '_blank')}
+               >
+                 <Mail className="h-5 w-5" />
+               </Button>
+             </div>
           </div>
 
           {/* Quick Links */}

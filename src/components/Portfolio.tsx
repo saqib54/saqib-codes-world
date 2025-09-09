@@ -4,69 +4,68 @@ import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, Star, GitFork } from "lucide-react";
 
 const Portfolio = () => {
-  // Featured projects - these would typically come from GitHub API
+  // Featured projects with real GitHub links
   const featuredProjects = [
     {
-      title: "E-Commerce Mobile App",
-      description: "Full-featured Android e-commerce application with payment integration, user authentication, and real-time inventory management.",
+      title: "My Quran",
+      description: "A beautiful and feature-rich Quran application for Android with clean UI, verse search, and spiritual features for daily reading.",
       image: "/api/placeholder/400/250",
-      tags: ["Java", "Android", "Firebase", "Stripe API"],
-      github: "#",
+      tags: ["Android", "Java", "SQLite", "UI/UX"],
+      github: "https://github.com/saqib54/my-Quran",
       live: "#",
-      stars: 24,
-      forks: 8,
-      challenge: "Building secure payment processing and real-time inventory sync",
-      solution: "Implemented Firebase Firestore with secure API endpoints and encrypted payment handling"
+      stars: 5,
+      forks: 2,
+      challenge: "Creating an intuitive interface for spiritual reading experience",
+      solution: "Implemented clean typography, search functionality, and smooth navigation"
     },
     {
-      title: "Portfolio Website Builder",
-      description: "React-based web application allowing users to create professional portfolios with drag-and-drop functionality and customizable themes.",
+      title: "Digital Signup Login Page",
+      description: "Modern and responsive authentication system with clean design patterns and secure user management features.",
       image: "/api/placeholder/400/250",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
-      github: "#",
+      tags: ["HTML", "CSS", "JavaScript", "Authentication"],
+      github: "https://github.com/saqib54/Digital-Signup-Login-Page",
       live: "#",
-      stars: 32,
-      forks: 12,
-      challenge: "Creating flexible component system with real-time preview",
-      solution: "Built modular React components with context API for state management"
+      stars: 3,
+      forks: 1,
+      challenge: "Building secure and user-friendly authentication flow",
+      solution: "Created responsive design with form validation and modern UI patterns"
     },
     {
-      title: "Task Management System",
-      description: "Collaborative task management platform with team features, real-time updates, and advanced filtering capabilities.",
+      title: "Sial Browser",
+      description: "Custom web browser application with personalized features, bookmark management, and optimized browsing experience.",
       image: "/api/placeholder/400/250",
-      tags: ["Android", "Kotlin", "Room DB", "MVVM"],
-      github: "#",
+      tags: ["Android", "WebView", "Java", "Browser Engine"],
+      github: "https://github.com/saqib54/Sial-Browser",
       live: "#",
-      stars: 18,
-      forks: 5,
-      challenge: "Implementing offline-first architecture with sync capabilities",
-      solution: "Used Room database with background sync and conflict resolution"
+      stars: 4,
+      forks: 1,
+      challenge: "Implementing full browser functionality with custom features",
+      solution: "Leveraged WebView with custom controls and bookmark management system"
     }
   ];
 
   const allProjects = [
     {
-      title: "Weather Forecast App",
-      description: "Clean, intuitive weather app with location services and extended forecasts.",
-      tags: ["Android", "Java", "OpenWeather API"],
-      github: "#",
+      title: "My Quran",
+      description: "Beautiful Quran app with verse search and spiritual features for daily reading.",
+      tags: ["Android", "Java", "SQLite"],
+      github: "https://github.com/saqib54/my-Quran",
       live: "#"
     },
     {
-      title: "Social Media Dashboard",
-      description: "Analytics dashboard for social media management with chart visualizations.",
-      tags: ["React", "Chart.js", "API Integration"],
-      github: "#",
+      title: "Digital Signup Login",
+      description: "Modern authentication system with responsive design and form validation.",
+      tags: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/saqib54/Digital-Signup-Login-Page",
       live: "#"
     },
     {
-      title: "Inventory Management",
-      description: "Business inventory tracking system with barcode scanning capabilities.",
-      tags: ["Android", "Kotlin", "SQLite"],
-      github: "#",
+      title: "Sial Browser",
+      description: "Custom browser application with bookmark management and browsing optimization.",
+      tags: ["Android", "WebView", "Java"],
+      github: "https://github.com/saqib54/Sial-Browser",
       live: "#"
     },
-    // More projects would be loaded from GitHub API
   ];
 
   return (
@@ -132,16 +131,25 @@ const Portfolio = () => {
                         ))}
                       </div>
                       
-                      <div className="flex gap-3 pt-4">
-                        <Button size="sm" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                          <Github className="h-4 w-4 mr-2" />
-                          View Code
-                        </Button>
-                        <Button size="sm" className="bg-primary hover:bg-primary/90">
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          Live Demo
-                        </Button>
-                      </div>
+                       <div className="flex gap-3 pt-4">
+                         <Button 
+                           size="sm" 
+                           variant="outline" 
+                           className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                           onClick={() => window.open(project.github, '_blank')}
+                         >
+                           <Github className="h-4 w-4 mr-2" />
+                           View Code
+                         </Button>
+                         <Button 
+                           size="sm" 
+                           className="bg-primary hover:bg-primary/90"
+                           onClick={() => window.open(project.live, '_blank')}
+                         >
+                           <ExternalLink className="h-4 w-4 mr-2" />
+                           Live Demo
+                         </Button>
+                       </div>
                     </div>
                   </div>
                 </div>
@@ -170,26 +178,41 @@ const Portfolio = () => {
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex gap-2 pt-2">
-                    <Button size="sm" variant="ghost" className="text-primary hover:text-primary hover:bg-primary/10 p-2">
-                      <Github className="h-4 w-4" />
-                    </Button>
-                    <Button size="sm" variant="ghost" className="text-primary hover:text-primary hover:bg-primary/10 p-2">
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
-                  </div>
+                   <div className="flex gap-2 pt-2">
+                     <Button 
+                       size="sm" 
+                       variant="ghost" 
+                       className="text-primary hover:text-primary hover:bg-primary/10 p-2"
+                       onClick={() => window.open(project.github, '_blank')}
+                     >
+                       <Github className="h-4 w-4" />
+                     </Button>
+                     <Button 
+                       size="sm" 
+                       variant="ghost" 
+                       className="text-primary hover:text-primary hover:bg-primary/10 p-2"
+                       onClick={() => window.open(project.live, '_blank')}
+                     >
+                       <ExternalLink className="h-4 w-4" />
+                     </Button>
+                   </div>
                 </div>
               </Card>
             ))}
           </div>
         </div>
 
-        <div className="text-center animate-fade-in-delay">
-          <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-            <Github className="h-5 w-5 mr-2" />
-            View All Projects on GitHub
-          </Button>
-        </div>
+         <div className="text-center animate-fade-in-delay">
+           <Button 
+             variant="outline" 
+             size="lg" 
+             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+             onClick={() => window.open('https://github.com/saqib54', '_blank')}
+           >
+             <Github className="h-5 w-5 mr-2" />
+             View All Projects on GitHub
+           </Button>
+         </div>
       </div>
     </section>
   );

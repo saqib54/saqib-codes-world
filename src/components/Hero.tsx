@@ -73,14 +73,18 @@ const Hero = () => {
                 officalyt.pk@gmail.com
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/saqib-azair-22301b33b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
                 LinkedIn
               </a>
               <a
-                href="#"
+                href="https://github.com/saqib54"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Github className="h-5 w-5" />
