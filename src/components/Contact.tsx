@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 import { 
   Mail, 
   Phone, 
@@ -18,6 +19,7 @@ import {
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -63,33 +65,49 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     
-    // Create mailto link with form data
-    const subject = encodeURIComponent(formData.subject || "New Contact Form Submission");
-    const body = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
+    try {
+      // Initialize EmailJS
+      emailjs.init('B31Z_os1V1IlXbFoo');
+      
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_3v9imboS',
+        'template_ox4togw',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject || 'New Contact Form Submission',
+          message: formData.message,
+          to_email: 'officalyt.pk@gmail.com'
+        }
+      );
 
-Message:
-${formData.message}
-    `);
-    
-    window.location.href = `mailto:officalyt.pk@gmail.com?subject=${subject}&body=${body}`;
-    
-    toast({
-      title: "Message prepared!",
-      description: "Your email client should open with the message ready to send.",
-    });
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: ""
-    });
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again later or contact me directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -235,10 +253,11 @@ ${formData.message}
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                disabled={isLoading}
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-50"
               >
                 <Send className="h-5 w-5 mr-2" />
-                Send Message
+                {isLoading ? "Sending..." : "Send Message"}
               </Button>
 
               <p className="text-xs text-muted-foreground text-center">
