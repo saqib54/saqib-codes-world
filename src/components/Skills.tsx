@@ -92,24 +92,24 @@ const Skills = () => {
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
-            My <span className="text-primary">Skills</span>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 animate-slide-up neon-text animate-neon-pulse">
+            My <span className="neon-text-pink">Skills</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Technical expertise and proficiency levels
+            Technical <span className="neon-text">expertise</span> and proficiency levels
           </p>
         </div>
 
         {/* Skill Categories with Progress Bars */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, index) => (
-            <Card key={category.title} className="card-elegant p-6 animate-slide-up" style={{ animationDelay: `${0.4 + index * 0.1}s` }}>
+            <Card key={category.title} className="card-neon p-6 animate-slide-up" style={{ animationDelay: `${0.4 + index * 0.1}s` }}>
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
                   <div className={`${category.color}`}>
                     {category.icon}
                   </div>
-                  <h3 className="text-xl font-semibold">{category.title}</h3>
+                  <h3 className="text-xl font-semibold neon-text">{category.title}</h3>
                 </div>
                 
                 <div className="space-y-4">
@@ -130,7 +130,7 @@ const Skills = () => {
 
         {/* Technologies & Tools */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-8 text-center animate-slide-up">
+          <h3 className="text-2xl font-bold mb-8 text-center animate-slide-up neon-text-pink">
             Technologies & Tools
           </h3>
           <div className="flex flex-wrap justify-center gap-3 animate-slide-up" style={{ animationDelay: '0.8s' }}>
@@ -138,7 +138,7 @@ const Skills = () => {
               <Badge 
                 key={tech} 
                 variant="secondary" 
-                className="bg-card hover:bg-primary hover:text-primary-foreground transition-colors cursor-default text-sm py-2 px-4"
+                className="bg-card hover:bg-primary/20 hover:text-primary hover:neon-glow transition-all duration-300 cursor-default text-sm py-2 px-4 neon-border"
                 style={{ animationDelay: `${1.0 + index * 0.05}s` }}
               >
                 {tech}
@@ -149,44 +149,44 @@ const Skills = () => {
 
         {/* Experience Level Indicators */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
-          <Card className="card-elegant p-6 text-center animate-slide-up" style={{ animationDelay: '1.2s' }}>
-            <div className="bg-primary/10 p-4 rounded-full w-fit mx-auto mb-4">
+          <Card className="card-neon p-6 text-center animate-slide-up" style={{ animationDelay: '1.2s' }}>
+            <div className="bg-primary/20 p-4 rounded-full w-fit mx-auto mb-4 neon-glow">
               <Code className="h-8 w-8 text-primary" />
             </div>
-            <h4 className="text-2xl font-bold mb-2">3+</h4>
+            <h4 className="text-2xl font-bold mb-2 neon-text">3+</h4>
             <p className="text-muted-foreground">Years of Experience</p>
           </Card>
           
-          <Card className="card-elegant p-6 text-center animate-slide-up" style={{ animationDelay: '1.3s' }}>
-            <div className="bg-primary/10 p-4 rounded-full w-fit mx-auto mb-4">
-              <Zap className="h-8 w-8 text-primary" />
+          <Card className="card-neon p-6 text-center animate-slide-up" style={{ animationDelay: '1.3s' }}>
+            <div className="bg-accent/20 p-4 rounded-full w-fit mx-auto mb-4 neon-glow-pink">
+              <Zap className="h-8 w-8 text-accent" />
             </div>
-            <h4 className="text-2xl font-bold mb-2">15+</h4>
+            <h4 className="text-2xl font-bold mb-2 neon-text-pink">15+</h4>
             <p className="text-muted-foreground">Projects Completed</p>
           </Card>
           
-          <Card className="card-elegant p-6 text-center animate-slide-up" style={{ animationDelay: '1.4s' }}>
-            <div className="bg-primary/10 p-4 rounded-full w-fit mx-auto mb-4">
+          <Card className="card-neon p-6 text-center animate-slide-up" style={{ animationDelay: '1.4s' }}>
+            <div className="bg-primary/20 p-4 rounded-full w-fit mx-auto mb-4 neon-glow">
               <GitBranch className="h-8 w-8 text-primary" />
             </div>
-            <h4 className="text-2xl font-bold mb-2">50+</h4>
+            <h4 className="text-2xl font-bold mb-2 neon-text">50+</h4>
             <p className="text-muted-foreground">GitHub Commits</p>
           </Card>
         </div>
 
         {/* Certifications */}
         <div>
-          <h3 className="text-2xl font-bold mb-8 text-center animate-slide-up">
+          <h3 className="text-2xl font-bold mb-8 text-center animate-slide-up neon-text">
             Certifications & Achievements
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
-              <Card key={cert.title} className="card-elegant p-6 text-center animate-slide-up" style={{ animationDelay: `${1.5 + index * 0.1}s` }}>
+              <Card key={cert.title} className="card-neon p-6 text-center animate-slide-up" style={{ animationDelay: `${1.5 + index * 0.1}s` }}>
                 <div className="space-y-3">
-                  <div className="bg-primary/10 p-3 rounded-full w-fit mx-auto">
+                  <div className="bg-primary/20 p-3 rounded-full w-fit mx-auto neon-glow">
                     <Database className="h-6 w-6 text-primary" />
                   </div>
-                  <h4 className="font-semibold">{cert.title}</h4>
+                  <h4 className="font-semibold neon-text">{cert.title}</h4>
                   <p className="text-primary font-medium">{cert.issuer}</p>
                   <div className="flex items-center justify-center gap-2">
                     <Badge variant="outline" className="text-xs">

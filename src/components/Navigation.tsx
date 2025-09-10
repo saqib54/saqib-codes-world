@@ -36,7 +36,7 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+          <div className="text-2xl font-bold neon-text-pink animate-neon-pulse">
             Saqib Azair
           </div>
 
@@ -46,7 +46,7 @@ const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="text-foreground hover:text-primary hover:neon-glow transition-all duration-300 font-medium"
               >
                 {item.label}
               </button>
@@ -55,7 +55,8 @@ const Navigation = () => {
 
           <Button
             onClick={() => scrollToSection("#contact")}
-            className="hidden md:block bg-primary hover:bg-primary/90"
+            variant="neon"
+            className="hidden md:block"
           >
             Contact Me
           </Button>
@@ -79,14 +80,15 @@ const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left text-foreground hover:text-primary transition-colors duration-200 font-medium py-2"
+                  className="text-left text-foreground hover:text-primary hover:neon-glow transition-all duration-300 font-medium py-2"
                 >
                   {item.label}
                 </button>
               ))}
               <Button
                 onClick={() => scrollToSection("#contact")}
-                className="bg-primary hover:bg-primary/90 w-full mt-4"
+                variant="neon-pink"
+                className="w-full mt-4"
               >
                 Contact Me
               </Button>

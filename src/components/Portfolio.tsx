@@ -72,22 +72,22 @@ const Portfolio = () => {
     <section id="portfolio" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
-            My <span className="text-primary">Portfolio</span>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 animate-slide-up neon-text animate-neon-pulse">
+            My <span className="neon-text-pink">Portfolio</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Showcasing innovative projects and real-world solutions
+            Showcasing <span className="neon-text">innovative projects</span> and real-world solutions
           </p>
         </div>
 
         {/* Featured Projects */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-8 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+          <h3 className="text-2xl font-bold mb-8 animate-slide-up neon-text" style={{ animationDelay: '0.4s' }}>
             Featured Projects
           </h3>
           <div className="space-y-12">
             {featuredProjects.map((project, index) => (
-              <Card key={project.title} className={`card-elegant overflow-hidden animate-slide-up ${
+              <Card key={project.title} className={`card-neon overflow-hidden animate-slide-up ${
                 index % 2 === 1 ? 'lg:flex-row-reverse' : ''
               }`} style={{ animationDelay: `${0.6 + index * 0.2}s` }}>
                 <div className="lg:flex">
@@ -98,12 +98,12 @@ const Portfolio = () => {
                   </div>
                   <div className="lg:w-1/2 p-8">
                     <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <h4 className="text-2xl font-bold">{project.title}</h4>
+                       <div className="flex items-center gap-3">
+                        <h4 className="text-2xl font-bold neon-text">{project.title}</h4>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Star className="h-4 w-4" />
+                          <Star className="h-4 w-4 text-primary" />
                           {project.stars}
-                          <GitFork className="h-4 w-4 ml-2" />
+                          <GitFork className="h-4 w-4 ml-2 text-primary" />
                           {project.forks}
                         </div>
                       </div>
@@ -125,7 +125,7 @@ const Portfolio = () => {
                       
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary">
+                          <Badge key={tag} variant="secondary" className="bg-primary/20 text-primary neon-border">
                             {tag}
                           </Badge>
                         ))}
@@ -134,8 +134,8 @@ const Portfolio = () => {
                        <div className="flex gap-3 pt-4">
                          <Button 
                            size="sm" 
-                           variant="outline" 
-                           className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                           variant="neon" 
+                           className=""
                            onClick={() => window.open(project.github, '_blank')}
                          >
                            <Github className="h-4 w-4 mr-2" />
@@ -143,7 +143,8 @@ const Portfolio = () => {
                          </Button>
                          <Button 
                            size="sm" 
-                           className="bg-primary hover:bg-primary/90"
+                           variant="neon-pink"
+                           className=""
                            onClick={() => window.open(project.live, '_blank')}
                          >
                            <ExternalLink className="h-4 w-4 mr-2" />
@@ -160,20 +161,20 @@ const Portfolio = () => {
 
         {/* All Projects Grid */}
         <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-8 animate-slide-up">
+          <h3 className="text-2xl font-bold mb-8 animate-slide-up neon-text-pink">
             More Projects
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {allProjects.map((project, index) => (
-              <Card key={project.title} className="card-elegant p-6 animate-slide-up" style={{ animationDelay: `${1.2 + index * 0.1}s` }}>
+              <Card key={project.title} className="card-neon p-6 animate-slide-up" style={{ animationDelay: `${1.2 + index * 0.1}s` }}>
                 <div className="space-y-4">
-                  <h4 className="text-xl font-semibold">{project.title}</h4>
+                  <h4 className="text-xl font-semibold neon-text">{project.title}</h4>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-1">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs">
+                      <Badge key={tag} variant="outline" className="text-xs neon-border">
                         {tag}
                       </Badge>
                     ))}
@@ -204,9 +205,9 @@ const Portfolio = () => {
 
          <div className="text-center animate-fade-in-delay">
            <Button 
-             variant="outline" 
+             variant="neon" 
              size="lg" 
-             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+             className=""
              onClick={() => window.open('https://github.com/saqib54', '_blank')}
            >
              <Github className="h-5 w-5 mr-2" />
